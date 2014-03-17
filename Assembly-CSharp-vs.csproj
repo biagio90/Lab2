@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+	<Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+	<Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+	<ProductVersion>10.0.20506</ProductVersion>
+	<SchemaVersion>2.0</SchemaVersion>
+	<ProjectGuid>{DDEF2E0A-5C3A-95E3-CBE5-C1365615EF7B}</ProjectGuid>
+	<OutputType>Library</OutputType>
+	<AppDesignerFolder>Properties</AppDesignerFolder>
+	<RootNamespace></RootNamespace>
+	<AssemblyName>Assembly-CSharp</AssemblyName>
+	<TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+	<FileAlignment>512</FileAlignment>
+	<BaseDirectory>Assets</BaseDirectory>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+	<DebugSymbols>true</DebugSymbols>
+	<DebugType>full</DebugType>
+	<Optimize>false</Optimize>
+	<OutputPath>Temp\bin\Debug\</OutputPath>
+	<DefineConstants>DEBUG;TRACE;UNITY_STANDALONE_WIN;ENABLE_MICROPHONE;ENABLE_TEXTUREID_MAP;ENABLE_AUDIO_FMOD;UNITY_STANDALONE;ENABLE_MONO;ENABLE_SPRITES;ENABLE_TERRAIN;ENABLE_GENERICS;ENABLE_SUBSTANCE;INCLUDE_WP8SUPPORT;ENABLE_MOVIES;ENABLE_WWW;ENABLE_IMAGEEFFECTS;ENABLE_WEBCAM;INCLUDE_METROSUPPORT;RENDER_SOFTWARE_CURSOR;ENABLE_NETWORK;ENABLE_PHYSICS;ENABLE_CACHING;ENABLE_CLOTH;ENABLE_2D_PHYSICS;ENABLE_SHADOWS;ENABLE_AUDIO;ENABLE_NAVMESH_CARVING;ENABLE_DUCK_TYPING;ENABLE_SINGLE_INSTANCE_BUILD_SETTING;UNITY_4_3_3;UNITY_4_3;ENABLE_PROFILER;UNITY_EDITOR;UNITY_EDITOR_WIN</DefineConstants>
+	<ErrorReport>prompt</ErrorReport>
+	<WarningLevel>4</WarningLevel>
+	<NoWarn>0169</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+	<DebugType>pdbonly</DebugType>
+	<Optimize>true</Optimize>
+	<OutputPath>Temp\bin\Release\</OutputPath>
+	<DefineConstants>TRACE</DefineConstants>
+	<ErrorReport>prompt</ErrorReport>
+	<WarningLevel>4</WarningLevel>
+	<NoWarn>0169</NoWarn>
+  </PropertyGroup>
+  <ItemGroup>
+	<Reference Include="System" />
+    <Reference Include="System.XML" />
+	<Reference Include="System.Core" />
+	<Reference Include="System.Xml.Linq" />
+	<Reference Include="UnityEngine">
+	  <HintPath>C:/Program Files (x86)/Unity/Editor/Data/Managed/UnityEngine.dll</HintPath>
+	</Reference>
+	<Reference Include="UnityEditor">
+	  <HintPath>C:/Program Files (x86)/Unity/Editor/Data/Managed/UnityEditor.dll</HintPath>
+	</Reference>
+  </ItemGroup>
+  <ItemGroup>
+     <Compile Include="Assets\Script\Biagio\Area.cs" />
+     <Compile Include="Assets\Script\Biagio\Astar\AstarCreator.cs" />
+     <Compile Include="Assets\Script\Biagio\DubinCar.cs" />
+     <Compile Include="Assets\Script\Biagio\DubinCarModel.cs" />
+     <Compile Include="Assets\Script\Biagio\MoveRobot\MoveRobotDifferential.cs" />
+     <Compile Include="Assets\Script\Biagio\MoveRobot\MoveRobotDifferentialold.cs" />
+     <Compile Include="Assets\Script\Biagio\RRT\KinematicRRTController.cs" />
+     <Compile Include="Assets\Script\Biagio\RRT\RRTCarDubin.cs" />
+     <Compile Include="Assets\Script\Biagio\RRT\carRTTModel.cs" />
+     <Compile Include="Assets\Script\Biagio\RRT\rrDubinTree.cs" />
+     <Compile Include="Assets\Script\Biagio\RRT\rrTree.cs" />
+     <Compile Include="Assets\Script\Biagio\RRT\rrtAlgorithm.cs" />
+     <Compile Include="Assets\Script\Biagio\RRT\rrtNode.cs" />
+     <Compile Include="Assets\Script\Biagio\SpaceOverlapping\ConvexOverlapping.cs" />
+     <Compile Include="Assets\Script\Biagio\SpaceOverlapping\ConvexOverlappingPrintLine.cs" />
+     <Compile Include="Assets\Script\Biagio\SpaceOverlapping\VRP.cs" />
+     <Compile Include="Assets\Script\Biagio\Triangulation\MyTriangulator.cs" />
+     <Compile Include="Assets\Script\Biagio\Triangulation\PolygonTester.cs" />
+     <Compile Include="Assets\Script\Biagio\Triangulation\TesterTriangulation.cs" />
+     <Compile Include="Assets\Script\Biagio\Triangulation\Triangle.cs" />
+     <Compile Include="Assets\Script\Biagio\Triangulation\Triangulator.cs" />
+     <Compile Include="Assets\Script\Biagio\carMoveModel.cs" />
+     <Compile Include="Assets\Script\Biagio\prova.cs" />
+     <Compile Include="Assets\Script\Enrico\GA.cs" />
+     <Compile Include="Assets\Script\constants.cs" />
+     <Compile Include="Assets\Script\utility_script\CameraController.cs" />
+     <Compile Include="Assets\Script\utility_script\DirectionUtility.cs" />
+     <Compile Include="Assets\Script\utility_script\MyLine.cs" />
+     <Compile Include="Assets\Script\utility_script\PID.cs" />
+     <Compile Include="Assets\Script\utility_script\UnityRandom-master\ExampleFiles\ExampleUnityRandom.cs" />
+     <Compile Include="Assets\Script\utility_script\UnityRandom-master\ExampleFiles\RotateAround.cs" />
+     <Compile Include="Assets\Script\utility_script\UnityRandom-master\UnityRandom.cs" />
+     <Compile Include="Assets\Script\utility_script\UnityRandom-master\lib\DiceRoll.cs" />
+     <Compile Include="Assets\Script\utility_script\UnityRandom-master\lib\ExponentialDistribution.cs" />
+     <Compile Include="Assets\Script\utility_script\UnityRandom-master\lib\GammaDistribution.cs" />
+     <Compile Include="Assets\Script\utility_script\UnityRandom-master\lib\MersenneTwister.cs" />
+     <Compile Include="Assets\Script\utility_script\UnityRandom-master\lib\NormalDistribution.cs" />
+     <Compile Include="Assets\Script\utility_script\UnityRandom-master\lib\PoissonDistribution.cs" />
+     <Compile Include="Assets\Script\utility_script\UnityRandom-master\lib\PowerLaw.cs" />
+     <Compile Include="Assets\Script\utility_script\UnityRandom-master\lib\RandomCube.cs" />
+     <Compile Include="Assets\Script\utility_script\UnityRandom-master\lib\RandomDisk.cs" />
+     <Compile Include="Assets\Script\utility_script\UnityRandom-master\lib\RandomSphere.cs" />
+     <Compile Include="Assets\Script\utility_script\UnityRandom-master\lib\RandomSquare.cs" />
+     <Compile Include="Assets\Script\utility_script\UnityRandom-master\lib\ShuffleBagCollection.cs" />
+     <Compile Include="Assets\Script\utility_script\UnityRandom-master\lib\SpecialFunctions.cs" />
+     <Compile Include="Assets\Script\utility_script\UnityRandom-master\lib\WaveToRgb.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+	   Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  
+</Project>
