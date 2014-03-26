@@ -1,0 +1,35 @@
+Elemento 1: MAtrice delle adiacenze
+
+Abbiamo il grafo connesso, quidni c'è da creare una matrice NxN 
+con un numero 1 se c'è una connessione trai nodi, zero altrimenti.
+
+mi sembra che nel nostro caso non bogliamo complicarci la vita quindi 
+la matrice della visibilità è la stessa delle adiacenze.
+
+Elemento 2: Creare la min-max multiplication
+
+E' una operazione che ci serve per far evolvere il sistema dato dai
+vettori che tengono la posizione dei nostri robot e le possibili posizioni dell'evader.
+E' fatta così:
+
+hai una matrice 1xN e NxN A e B che vuoi moltiplicare in questo modo.
+La matrice in uscite è di dimensione 1xN:
+
+l'elemento 1,i (i al massimo è N) del matrice risultato D
+si ottiene prendendo prima il minimo delle coppie di numeri A(1,m),B(m,i) 
+dove "m" scorre da 1 a N. 
+Dopo che hai tutti questi N numeri che non i minimi delle coppie ci prendi il massimo,
+e hai l'elemento che va al primo posto nella matrice in uscita. 
+(guarda il PDF che ti ho mandato per capire la formula).
+
+Se abbiamo questa moltiplicazione possiamo scrivere proprio a calcolo come si muove l'evader 
+e i nodi che devono essere visitati dei robot per prendere il ladro.
+
+Elemento 3: La matrice di adiacenze modificata A*
+Di base è la matrice che tiene conto di tutti i nodi in cui ci sono i nostri robot poliziotti
+e di tutti quelli che possono vedere.
+Dato il vettore X che tiene tutte le posizioni dei robot poliziotti la matrice delle adiacenze 
+modificate ha uno zero nella posizione i,j se nel nodo i , o j c'è un robot OPPURE se un robot 
+può vedere quel nodo, ovvero se il nodo i,j è adiacente ad uno in cui c'è un poliziotto.
+Se non c'è questa condizione lasci A(i,j) che viene dalle adiacenze di prima.
+ 

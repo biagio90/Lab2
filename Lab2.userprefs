@@ -1,12 +1,13 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Script\Biagio\SpaceOverlapping\VRP.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Script\Biagio\PursuitEvasion\PEtest.cs">
     <Files>
-      <File FileName="Assets\Script\Biagio\Area.cs" Line="1" Column="1" />
-      <File FileName="Assets\Script\Biagio\MoveRobot\MoveRobotDifferential.cs" Line="1" Column="1" />
-      <File FileName="Assets\Script\Biagio\Astar\AstarCreator.cs" Line="74" Column="8" />
-      <File FileName="..\Lab1Final\Assets\Script\ObstacleMaze\myAstar\KinematicAStar.cs" Line="1" Column="1" />
-      <File FileName="Assets\Script\Biagio\SpaceOverlapping\VRP.cs" Line="29" Column="15" />
+      <File FileName="Assets\Script\Biagio\PursuitEvasion\PEtest.cs" Line="39" Column="2" />
+      <File FileName="Assets\Script\Biagio\Grafo\Graph.cs" Line="69" Column="6" />
+      <File FileName="Assets\Script\Biagio\PursuitEvasion\PEalgorithm.cs" Line="75" Column="5" />
+      <File FileName="Assets\Script\Biagio\PursuitEvasion\PEtest.cs" Line="72" Column="1" />
+      <File FileName="Assets\Script\Biagio\PursuitEvasion\DirtySet.cs" Line="83" Column="18" />
+      <File FileName="Assets\Script\Biagio\PursuitEvasion\Path.cs" Line="24" Column="29" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

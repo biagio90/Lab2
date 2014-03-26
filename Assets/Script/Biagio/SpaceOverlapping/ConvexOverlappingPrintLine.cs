@@ -26,17 +26,27 @@ public class ConvexOverlappingPrintLine : MonoBehaviour {
 	}
 
 	private void printLine (Vector3 p1, Vector3 p2) {
+		printLineOld(p1, p2);
+	}
+
+	private void printLineNew (Vector3 p1, Vector3 p2) {
 		p1.y = mainY;
 		p2.y = mainY;
 		Vector3 dir = (p2 - p1);
 
 		Ray ray = new Ray(p1, dir);
 		RaycastHit hit = new RaycastHit ();
-		if (Physics.Raycast (ray, out hit, 200)) {
+		bool collision = Physics.Raycast (ray, out hit, 200);
+		if (collision) {
 			draw.drawLine (p1, hit.point, Color.red);
-			Debug.Log("Collision: "+hit.collider.name);
+//			Debug.Log("Collision: "+hit.collider.name);
 		}
 
+		if (collision && hit.collider.tag == "robot") {
+			ray = new Ray(hit.point, dir);
+			Physics.Raycast (ray, out hit, 200);
+			draw.drawLine (p1, hit.point, Color.red);
+		}
 	}
 
 	private void printLineOld (Vector3 p1, Vector3 p2) {

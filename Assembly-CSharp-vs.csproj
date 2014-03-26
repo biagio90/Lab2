@@ -50,8 +50,16 @@
      <Compile Include="Assets\Script\Biagio\Astar\AstarCreator.cs" />
      <Compile Include="Assets\Script\Biagio\DubinCar.cs" />
      <Compile Include="Assets\Script\Biagio\DubinCarModel.cs" />
+     <Compile Include="Assets\Script\Biagio\Grafo\Graph.cs" />
+     <Compile Include="Assets\Script\Biagio\Grafo\GraphOld.cs" />
+     <Compile Include="Assets\Script\Biagio\Grafo\Node.cs" />
      <Compile Include="Assets\Script\Biagio\MoveRobot\MoveRobotDifferential.cs" />
      <Compile Include="Assets\Script\Biagio\MoveRobot\MoveRobotDifferentialold.cs" />
+     <Compile Include="Assets\Script\Biagio\PursuitEvasion\DirtySet.cs" />
+     <Compile Include="Assets\Script\Biagio\PursuitEvasion\PEalgorithm.cs" />
+     <Compile Include="Assets\Script\Biagio\PursuitEvasion\PEalgorithmV2.cs" />
+     <Compile Include="Assets\Script\Biagio\PursuitEvasion\PEtest.cs" />
+     <Compile Include="Assets\Script\Biagio\PursuitEvasion\Path.cs" />
      <Compile Include="Assets\Script\Biagio\RRT\KinematicRRTController.cs" />
      <Compile Include="Assets\Script\Biagio\RRT\RRTCarDubin.cs" />
      <Compile Include="Assets\Script\Biagio\RRT\carRTTModel.cs" />
@@ -92,6 +100,7 @@
      <Compile Include="Assets\Script\utility_script\UnityRandom-master\lib\ShuffleBagCollection.cs" />
      <Compile Include="Assets\Script\utility_script\UnityRandom-master\lib\SpecialFunctions.cs" />
      <Compile Include="Assets\Script\utility_script\UnityRandom-master\lib\WaveToRgb.cs" />
+     <None Include="Assets\Script\Biagio\Grafo\Passi Da fare per l&apos;algoritmo.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

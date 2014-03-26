@@ -12,6 +12,11 @@ public class AstarCreator {
 		dimGrid = dim;
 	}
 
+	public AstarCreator (int dim, float step) {
+		dimGrid = dim;
+		this.step = step;
+	}
+
 	public ArrayList getPath(Vector3 from, Vector3 to) {
 		y = from.y;
 
@@ -53,11 +58,15 @@ public class AstarCreator {
 				
 				// for each neighbor
 				ArrayList neighborhood = new ArrayList();
-				if(isFree(up (current)))    neighborhood.Add (up (current));
-				if(isFree(left (current)))  neighborhood.Add (left (current));
-				if(isFree(down (current)))  neighborhood.Add (down (current));
-				if(isFree(right (current))) neighborhood.Add (right (current));
-				
+				if(isFree(current, up (current)))    neighborhood.Add (up (current));
+				if(isFree(current, left (current)))  neighborhood.Add (left (current));
+				if(isFree(current, down (current)))  neighborhood.Add (down (current));
+				if(isFree(current, right (current))) neighborhood.Add (right (current));
+				if(isFree(current, upLeft (current)))    neighborhood.Add (upLeft (current));
+				if(isFree(current, downLeft (current)))  neighborhood.Add (downLeft (current));
+				if(isFree(current, downRight (current))) neighborhood.Add (downRight (current));
+				if(isFree(current, upRight (current))) 	 neighborhood.Add (upRight (current));
+
 				foreach (Vector2 neighbor in neighborhood) {
 					if (!isPresent(close, neighbor)) {
 						int aux_g = g_score[normalize(current.x), normalize(current.y)] + distance(current, neighbor);
@@ -159,8 +168,37 @@ public class AstarCreator {
 		return res;
 	}
 	
-	
-	private bool isFree (Vector3 pos) {
+	private bool isFree (Vector2 pos1, Vector2 pos2) {
+		Vector3 p = new Vector3 (pos1.x, 1, pos1.y);
+		Vector3 p2 = new Vector3 (pos2.x, 1, pos2.y);
+		Vector3 dir = p2 - p;
+
+		Ray ray = new Ray(p, dir);
+		RaycastHit hit = new RaycastHit ();
+		bool collision = Physics.Raycast (ray, out hit, dir.magnitude);
+
+		//bool capsule = Physics.CheckCapsule(p, p2, step);
+		//return (!collision && !capsule);
+
+		return !collision;// && isFreeRightAndLeft(pos2);
+	}
+
+	private bool isFreeRightAndLeft(Vector2 pos) {
+		Vector3 p = new Vector3 (pos.x, 1, pos.y);
+		Vector2 r2 = right (p);
+		Vector2 l2 = left (p);
+		Vector3 r = new Vector3 (r2.x, 1, r2.y);
+		Vector3 l = new Vector3 (l2.x, 1, l2.y);
+		Vector3 dir = r - l;
+
+		Ray ray = new Ray(l, dir);
+		RaycastHit hit = new RaycastHit ();
+		bool collision = Physics.Raycast (ray, out hit, dir.magnitude);
+
+		return !collision;
+	}
+
+	private bool isFree (Vector2 pos) {
 		Vector3 p = new Vector3 (pos.x, 1, pos.y);
 		//return !Physics.CheckSphere (p, sight);
 
@@ -184,7 +222,6 @@ public class AstarCreator {
 		return Mathf.FloorToInt(d*d);
 	}
 
-	
 	private Vector3 to3D(Vector2 pos) {
 		return new Vector3 (pos.x, y+1, pos.y);
 	}
@@ -220,5 +257,9 @@ public class AstarCreator {
 	private Vector2 down (Vector2 pos) {return new Vector2 (pos.x, pos.y-step);}
 	private Vector2 right(Vector2 pos) {return new Vector2 (pos.x+step, pos.y);}
 	private Vector2 left (Vector2 pos) {return new Vector2 (pos.x-step, pos.y);}
+	private Vector2 upLeft   (Vector2 pos) {return new Vector2 (pos.x-step, pos.y+step);}
+	private Vector2 downLeft (Vector2 pos) {return new Vector2 (pos.x-step, pos.y-step);}
+	private Vector2 upRight	 (Vector2 pos) {return new Vector2 (pos.x+step, pos.y+step);}
+	private Vector2 downRight (Vector2 pos) {return new Vector2 (pos.x+step, pos.y-step);}
 
 }

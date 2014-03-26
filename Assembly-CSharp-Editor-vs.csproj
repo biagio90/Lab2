@@ -48,6 +48,7 @@
   <ItemGroup>
      <Compile Include="Assets\Script\utility_script\UnityRandom-master\Editor\UnityRandomEditorDraw.cs" />
      <Compile Include="Assets\Script\utility_script\UnityRandom-master\Editor\UnityRandomEditorWindow.cs" />
+     <None Include="Assets\Script\Biagio\Grafo\Passi Da fare per l&apos;algoritmo.txt" />
  <Reference Include="UnityEditor.Graphs">
  <HintPath>C:\Program Files (x86)\Unity\Editor\Data\Managed\UnityEditor.Graphs.dll</HintPath>
  </Reference>

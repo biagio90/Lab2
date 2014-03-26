@@ -3,7 +3,7 @@ using System.Collections;
 
 public class MoveRobotDifferential : MonoBehaviour {
 
-	private AstarCreator Astar = new AstarCreator(100);
+	private AstarCreator Astar = new AstarCreator(600, 10);
 
 	public float speed = 20f;
 
@@ -37,7 +37,7 @@ public class MoveRobotDifferential : MonoBehaviour {
 			
 		}
 
-		if(go && path != null) {
+		if(go && path != null && path.Count != 0) {
 
 
 			if (!AstarReady) {
