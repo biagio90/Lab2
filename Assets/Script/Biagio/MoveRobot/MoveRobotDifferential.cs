@@ -9,6 +9,7 @@ public class MoveRobotDifferential : MonoBehaviour {
 
 	public bool go = false;
 	public ArrayList path;
+
 	private ArrayList pathAstar;
 	private bool AstarReady = false;
 	private int index = 0;

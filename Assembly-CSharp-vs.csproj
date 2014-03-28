@@ -53,6 +53,7 @@
      <Compile Include="Assets\Script\Biagio\Grafo\Graph.cs" />
      <Compile Include="Assets\Script\Biagio\Grafo\GraphOld.cs" />
      <Compile Include="Assets\Script\Biagio\Grafo\Node.cs" />
+     <Compile Include="Assets\Script\Biagio\MoveRobot\MoveRobot.cs" />
      <Compile Include="Assets\Script\Biagio\MoveRobot\MoveRobotDifferential.cs" />
      <Compile Include="Assets\Script\Biagio\MoveRobot\MoveRobotDifferentialold.cs" />
      <Compile Include="Assets\Script\Biagio\PursuitEvasion\DirtySet.cs" />
@@ -60,6 +61,7 @@
      <Compile Include="Assets\Script\Biagio\PursuitEvasion\PEalgorithmV2.cs" />
      <Compile Include="Assets\Script\Biagio\PursuitEvasion\PEtest.cs" />
      <Compile Include="Assets\Script\Biagio\PursuitEvasion\Path.cs" />
+     <Compile Include="Assets\Script\Biagio\PursuitEvasion\multiplicationTest.cs" />
      <Compile Include="Assets\Script\Biagio\RRT\KinematicRRTController.cs" />
      <Compile Include="Assets\Script\Biagio\RRT\RRTCarDubin.cs" />
      <Compile Include="Assets\Script\Biagio\RRT\carRTTModel.cs" />
@@ -69,12 +71,16 @@
      <Compile Include="Assets\Script\Biagio\RRT\rrtNode.cs" />
      <Compile Include="Assets\Script\Biagio\SpaceOverlapping\ConvexOverlapping.cs" />
      <Compile Include="Assets\Script\Biagio\SpaceOverlapping\ConvexOverlappingPrintLine.cs" />
-     <Compile Include="Assets\Script\Biagio\SpaceOverlapping\VRP.cs" />
      <Compile Include="Assets\Script\Biagio\Triangulation\MyTriangulator.cs" />
      <Compile Include="Assets\Script\Biagio\Triangulation\PolygonTester.cs" />
      <Compile Include="Assets\Script\Biagio\Triangulation\TesterTriangulation.cs" />
      <Compile Include="Assets\Script\Biagio\Triangulation\Triangle.cs" />
      <Compile Include="Assets\Script\Biagio\Triangulation\Triangulator.cs" />
+     <Compile Include="Assets\Script\Biagio\VRP\FitnessFunction.cs" />
+     <Compile Include="Assets\Script\Biagio\VRP\GAtester.cs" />
+     <Compile Include="Assets\Script\Biagio\VRP\GeneticAlgorithm.cs" />
+     <Compile Include="Assets\Script\Biagio\VRP\VRP.cs" />
+     <Compile Include="Assets\Script\Biagio\VRP\VRP_GA.cs" />
      <Compile Include="Assets\Script\Biagio\carMoveModel.cs" />
      <Compile Include="Assets\Script\Biagio\prova.cs" />
      <Compile Include="Assets\Script\Enrico\GA.cs" />

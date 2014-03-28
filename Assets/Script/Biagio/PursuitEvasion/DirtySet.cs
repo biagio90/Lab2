@@ -38,6 +38,7 @@ public class DirtySet {
 		}
 	}
 
+	//DEBUGED
 	public void updateVisibility(int[] robPos, int[][] A) {
 		int R = robPos.Length;
 
@@ -61,7 +62,7 @@ public class DirtySet {
 		return count;
 	}
 
-	
+	//DEBUGED
 	// MIN-MAX multiplication
 	public DirtySet multiplication(int[][] B) {
 		int[] A = dirtySet;
@@ -82,6 +83,30 @@ public class DirtySet {
 
 		DirtySet ret = new DirtySet(D);
 
+		return ret;
+	}
+
+	//DEBUGED
+	// MIN-MAX multiplication
+	public DirtySet multiplication(int[,] B) {
+		int[] A = dirtySet;
+		int[] D = new int[N];
+		
+		for (int i=0; i<N; i++) {
+			int[] min = new int[N];
+			for (int m=0; m<N; m++) {
+				if (A[m] < B[m,i]) { min[m] = A[m]; } else {min[m] = B[m,i];}
+			}
+			int max = -1;
+			for (int m=0; m<N; m++) {
+				if(min[m] > max) max = min[m];
+			}
+			
+			D[i] = max;
+		}
+		
+		DirtySet ret = new DirtySet(D);
+		
 		return ret;
 	}
 

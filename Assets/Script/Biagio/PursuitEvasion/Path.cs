@@ -34,8 +34,10 @@ public class Path {
 	}
 
 	public void print() {
+		string log = "Path ("+path.Count+"):\n";
 		for (int i=0; i<path.Count; i++) {
-			Debug.Log ("("+((int[])path[i])[0]+", "+((int[])path[i])[0]+") ; ");
+			 log += "("+((int[])path[i])[0]+", "+((int[])path[i])[1]+") \n";
 		}
+		Debug.Log (log);
 	}
 }

@@ -2,7 +2,7 @@
 using System.Collections;
 
 public class Graph {
-	private Node[] nodes;
+	public Node[] nodes;
 	public int[][] adjacency;
 
 	public Graph(Area[] aree) {
@@ -53,7 +53,34 @@ public class Graph {
 		}
 	}
 
+	//DEBUGGED
+	// find the minimal distance between two node
+	private int Lbest;
+	public int dist(int x, int d) {
+		Lbest = nodes.Length;
+		dfs (x, d, 0);
+		return Lbest;
+	}
 
+	//DEBUGGED
+	private void dfs(int x, int d, int l) {
+		if (x == d) {
+			if (l < Lbest) Lbest = l;
+			return ;
+		}
+
+		for (int i=0; i<nodes.Length; i++) {
+			if(i!=x && adjacency[x][i] == 1) {
+				adjacency[x][i] = 0;
+				adjacency[i][x] = 0;
+				dfs (i, d, l+1);
+				adjacency[x][i] = 1;
+				adjacency[i][x] = 1;
+			}
+		}
+	}
+
+	/*********************/
 	 public bool freePath (Vector3 p1, Vector3 p2) {
 		Vector3 direction = (p2 - p1).normalized;
 		float sight = (p2 - p1).magnitude;
