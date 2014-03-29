@@ -3,7 +3,7 @@ using System.Collections;
 
 public class VRP_GA : MonoBehaviour {
 
-	private int maxIteration = 100;
+	public int maxIteration = 50;
 
 	private MoveRobot[] robotsObject;
 
@@ -18,6 +18,9 @@ public class VRP_GA : MonoBehaviour {
 
 	private FitnessFunction ff;
 	private GeneticAlgorithm ga;
+
+	private float lastSolution = 0.0f;
+	private int countLastSolution = 0;
 
 	// Use this for initialization
 	void Start () {
@@ -35,7 +38,7 @@ public class VRP_GA : MonoBehaviour {
 		ga = new GeneticAlgorithm (numrobot + aree.Length, 10, maxIteration, ff);
 		/*
 		int[] solution = ga.run ();
-
+		
 		string log = "GA: [";
 		for (int i=0; i<solution.Length; i++) {
 			log += solution[i] + ", ";
@@ -49,10 +52,18 @@ public class VRP_GA : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if(iteration < maxIteration) {
+
+		if(iteration < maxIteration ){//&& countLastSolution < 20) {
 			ga.oneStepRun ();
 			//Debug.Log ("iteration "+iteration);
 			iteration++;
+
+			if (lastSolution == ga._bestFitness) {
+				countLastSolution++;
+			} else {
+				lastSolution = ga._bestFitness;
+				countLastSolution = 1;
+			}
 		} else if(!end) {
 			end = true;
 			Debug.Log ("FINITO");
@@ -64,6 +75,7 @@ public class VRP_GA : MonoBehaviour {
 			log += "]";
 			Debug.Log (log);
 			Debug.Log ("fitness: "+ga._bestFitness);
+			//Debug.Log ("countLastSolution: "+countLastSolution);
 
 			makeItMove(ga._bestSolution);
 		}

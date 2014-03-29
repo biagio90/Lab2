@@ -41,6 +41,7 @@ public class FitnessFunction {
 
 	private float AstarDistance(int pos1, int pos2) {
 		Vector3 from, to;
+		//Debug.Log ("distance from "+pos1+" to "+pos2);
 		if (pos1 < robotNumber) from = robots[pos1];
 		else   from = positions[pos1-robotNumber];
 

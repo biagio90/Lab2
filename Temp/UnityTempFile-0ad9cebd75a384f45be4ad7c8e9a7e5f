@@ -73,6 +73,7 @@ Assets/Script/Biagio/VRP/VRP.cs
 Assets/Script/Biagio/VRP/VRP_GA.cs
 Assets/Script/Biagio/carMoveModel.cs
 Assets/Script/Biagio/prova.cs
+Assets/Script/Enrico/CoopSearch.cs
 Assets/Script/Enrico/GA.cs
 Assets/Script/constants.cs
 Assets/Script/utility_script/CameraController.cs

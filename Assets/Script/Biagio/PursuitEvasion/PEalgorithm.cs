@@ -26,7 +26,7 @@ public class PEalgorithm {
 		r = robotPosition;
 		R = robotPosition.Length;
 
-		N = graph.numberNodes();
+		N = graph.getnumnodes();
 
 		d = new DirtySet[N][];
 		for (int i=0; i<N; i++) {

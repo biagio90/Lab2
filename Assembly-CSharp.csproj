@@ -83,6 +83,7 @@
      <Compile Include="Assets\Script\Biagio\VRP\VRP_GA.cs" />
      <Compile Include="Assets\Script\Biagio\carMoveModel.cs" />
      <Compile Include="Assets\Script\Biagio\prova.cs" />
+     <Compile Include="Assets\Script\Enrico\CoopSearch.cs" />
      <Compile Include="Assets\Script\Enrico\GA.cs" />
      <Compile Include="Assets\Script\constants.cs" />
      <Compile Include="Assets\Script\utility_script\CameraController.cs" />

@@ -38,7 +38,7 @@ public class PEalgorithmV2 {
 		r = robotPosition;
 		R = robotPosition.Length;
 		
-		N = graph.numberNodes();
+		N = graph.getnumnodes();
 		Np2 = Mathf.FloorToInt(Mathf.Pow (2, N));
 
 		v = new int[Np2];
