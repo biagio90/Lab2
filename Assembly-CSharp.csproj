@@ -71,6 +71,7 @@
      <Compile Include="Assets\Script\Biagio\RRT\rrtNode.cs" />
      <Compile Include="Assets\Script\Biagio\SpaceOverlapping\ConvexOverlapping.cs" />
      <Compile Include="Assets\Script\Biagio\SpaceOverlapping\ConvexOverlappingPrintLine.cs" />
+     <Compile Include="Assets\Script\Biagio\StaticGuarding\StaticGuarding.cs" />
      <Compile Include="Assets\Script\Biagio\Triangulation\MyTriangulator.cs" />
      <Compile Include="Assets\Script\Biagio\Triangulation\PolygonTester.cs" />
      <Compile Include="Assets\Script\Biagio\Triangulation\TesterTriangulation.cs" />
