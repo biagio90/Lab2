@@ -38,10 +38,11 @@ public class CoopSearch : MonoBehaviour {
 
 		robots = findtag("robot");
 		numrobot = robots.Length;
+		Debug.Log ("robots: " + numrobot);
 
 		positions = new Vector3[nodes.Length];
 		numaree = nodes.Length;
-		for (int i=0; i<nodes.Length; i++) {
+		for (int i=0; i<numaree; i++) {
 			positions[i] = nodes[i].area.center3D;
 		}
 

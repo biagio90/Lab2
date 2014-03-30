@@ -52,6 +52,7 @@
      <Compile Include="Assets\Script\Biagio\DubinCarModel.cs" />
      <Compile Include="Assets\Script\Biagio\Grafo\Graph.cs" />
      <Compile Include="Assets\Script\Biagio\Grafo\GraphOld.cs" />
+     <Compile Include="Assets\Script\Biagio\Grafo\GraphPrint.cs" />
      <Compile Include="Assets\Script\Biagio\Grafo\Node.cs" />
      <Compile Include="Assets\Script\Biagio\MoveRobot\MoveRobot.cs" />
      <Compile Include="Assets\Script\Biagio\MoveRobot\MoveRobotDifferential.cs" />

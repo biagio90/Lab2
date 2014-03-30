@@ -3,27 +3,29 @@ using System.Collections;
 
 public class StaticGuarding : MonoBehaviour {
 
+	private MyLine draw = new MyLine();
+
 	private MoveRobot[] robotsObject;
-	private Vector3[] robots;
+	//private Vector3[] robots;
 
 	// Use this for initialization
 	void Start () {
 		Area[] aree = ConvexOverlapping.divideSpaceIntoArea();
 		Graph graph = new Graph(aree) ;
-		robots = findtag("robot");
+		Vector3[] robots = findtag("robot");
+		//findtag("robot");
 
 		Node[] nodes = cooperativesearch_paths (graph);
+		Debug.Log ("Num areas: "+nodes.Length);
 
-		ArrayList path = new ArrayList ();
-		path.Add (nodes[0].area.center3D);
-		robotsObject [0].path = path;
-
-		path = new ArrayList ();
-		path.Add (nodes[1].area.center3D);
-		robotsObject [1].path = path;
-
-		robotsObject [0].go = true;
-		robotsObject [1].go = true;
+		for (int i=0; i<robots.Length && i<nodes.Length; i++) {
+			createPoint(nodes[i].area.center3D);
+			ArrayList path = new ArrayList ();
+			path.Add (nodes[i].area.center3D);
+			robotsObject [i].path = path;
+		}
+		for (int i=0; i<robots.Length && i<nodes.Length; i++)
+			robotsObject [i].go = true;
 	}
 	
 	// Update is called once per frame
@@ -71,5 +73,11 @@ public class StaticGuarding : MonoBehaviour {
 			i++;
 		}
 		return tagpositions;
+	}
+
+	
+	private void createPoint (Vector3 point) {
+		Vector3 n = new Vector3 (point.x + 2f, point.y, point.z + 2f);
+		draw.drawLine (point, n, Color.red);
 	}
 }

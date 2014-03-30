@@ -3,7 +3,7 @@ using System.Collections;
 
 public class FitnessFunction {
 
-	private AstarCreator Astar = new AstarCreator(600, 10);
+	private AstarCreator Astar = new AstarCreator(100, 1);
 
 	private int robotNumber;
 	private Vector3[] robots;

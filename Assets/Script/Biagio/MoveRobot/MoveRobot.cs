@@ -3,8 +3,9 @@ using System.Collections;
 
 public class MoveRobot : MonoBehaviour {
 	
-	private AstarCreator Astar = new AstarCreator(600, 10);
-	
+	private AstarCreator Astar = new AstarCreator(600, 5);
+	public bool printAstarPath = true;
+
 	public float speed = 20f;
 	
 	public bool go = false;
@@ -46,7 +47,8 @@ public class MoveRobot : MonoBehaviour {
 				pathAstar = Astar.getPath(transform.position, (Vector3) path[index]);
 				pathAstar.Reverse();
 				pathAstar.Add(path[index]);
-				foreach (Vector3 p in pathAstar) createPoint(p);
+				//if(printAstarPath) foreach (Vector3 p in pathAstar) createPoint(p);
+				if(printAstarPath) draw.drawMultipleLines(pathAstar, Color.red);
 				AstarReady = true;
 				indexAstar = 0;
 				//Debug.Log("Count "+pathAstar.Count);

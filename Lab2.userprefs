@@ -1,12 +1,10 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Script\Biagio\Astar\AstarCreator.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Script\Enrico\CoopSearch.cs">
     <Files>
-      <File FileName="Assets\Script\Biagio\Grafo\Graph.cs" Line="46" Column="27" />
-      <File FileName="Assets\Script\Biagio\VRP\FitnessFunction.cs" Line="44" Column="5" />
-      <File FileName="Assets\Script\Biagio\VRP\VRP_GA.cs" Line="55" Column="3" />
-      <File FileName="Assets\Script\Enrico\CoopSearch.cs" Line="49" Column="37" />
-      <File FileName="Assets\Script\Biagio\Astar\AstarCreator.cs" Line="116" Column="32" />
+      <File FileName="Assets\Script\Biagio\StaticGuarding\StaticGuarding.cs" Line="17" Column="3" />
+      <File FileName="Assets\Script\Biagio\MoveRobot\MoveRobot.cs" Line="51" Column="67" />
+      <File FileName="Assets\Script\Enrico\CoopSearch.cs" Line="42" Column="3" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
