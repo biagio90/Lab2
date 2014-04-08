@@ -46,6 +46,7 @@ public class PEalgorithmV2 {
 		x = new int[Np2][];
 		for (int i=0; i<Np2; i++) {
 			path[i] = new Path();
+			path[i].add (r);
 			x[i] = new int[2];
 		}
 	}
@@ -62,7 +63,7 @@ public class PEalgorithmV2 {
 		x [0] [0] = r [0];
 		x [0] [1] = r [1];
 
-		path[0].add (r);
+		//path[0].add (r);
 		v[0] = d.cardinality();
 
 		Vbest = v[0];
@@ -72,7 +73,7 @@ public class PEalgorithmV2 {
 	
 	public void PEOneStep() {
 		int Qsize = Q.Count;
-		if(debugOn) Debug.Log ("Q size "+Qsize);
+		//Debug.Log ("Q size "+Qsize);
 		// for each configuratioQ.Countn of the robot
 		for (int d = 0; d < Qsize; d++) {
 			DirtySet D = (DirtySet) Q[d];
@@ -121,7 +122,17 @@ public class PEalgorithmV2 {
 
 							Q.Add(Dhat);
 							Dindex = Qsize;
-						} else if ( dist(Xhat, Dhat.dirtySet) < dist(x[d], Dhat.dirtySet) ) {
+
+							
+							if ( Vhat == Vbest && path[Dindex].path.Count < Pbest.path.Count) {
+								Pbest = new Path(path[Dindex]);
+								Vbest = Vhat;
+							} else if ( Vhat < Vbest) {
+								Pbest = new Path(path[Dindex]);
+								Vbest = Vhat;
+							}
+						} else if ( Vhat < v[Dindex] || ( Vhat == v[Dindex] &&
+								dist(Xhat, Dhat.dirtySet) < dist(x[d], Dhat.dirtySet)) ) {
 							// update old dirty set with new info
 
 							//Debug.Log(dist(Xhat, Dhat.dirtySet));
@@ -132,12 +143,25 @@ public class PEalgorithmV2 {
 							//Debug.Log("Q: "+Dindex);
 							//path[Qsize].print();
 							v[Dindex] = Vhat;
+
+							if ( Vhat == Vbest && path[Dindex].path.Count < Pbest.path.Count) {
+								Pbest = new Path(path[Dindex]);
+								Vbest = Vhat;
+							} else if ( Vhat < Vbest) {
+								Pbest = new Path(path[Dindex]);
+								Vbest = Vhat;
+							}
 						}
-						
-						if ( Vhat < Vbest) {
-							Pbest = path[Dindex];
-							Vbest = Vhat;
-						}
+						/*
+						if ( Vhat == Vbest) {
+								if (path[Dindex].path.Count < Pbest.path.Count) {
+									Pbest = new Path(path[Dindex]);
+									Vbest = Vhat;
+								}
+							} else if ( Vhat < Vbest) {
+								Pbest = new Path(path[Dindex]);
+								Vbest = Vhat;
+							}*/
 					}
 				}
 			}
@@ -233,6 +257,7 @@ public class PEalgorithmV2 {
 			if(d[i] == 1) {
 				for (int j=0; j<x.Length; j++) {
 					distance += graph.dist (x[j], i);
+					//distance += 1;
 				}
 			}
 		}

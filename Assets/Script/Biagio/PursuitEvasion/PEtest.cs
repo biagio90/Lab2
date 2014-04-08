@@ -2,8 +2,14 @@
 using System.Collections;
 
 public class PEtest : MonoBehaviour {
+	
+	private bool loading = true;
+	
+	void OnGUI() {
+		if (loading) GUI.Label(new Rect (400, 300, 100, 30), "Calculating...");
+	}
 
-	private int maxIteration = 10000;
+	public int maxIteration = 200;
 
 	private MoveRobot[] robotsObject;
 
@@ -18,7 +24,7 @@ public class PEtest : MonoBehaviour {
 	void Start () {
 		Area[] aree = ConvexOverlapping.divideSpaceIntoArea ();
 		graph = new Graph (aree);
-		graph.drawConnections ();
+		//graph.drawConnections ();
 		graph.printNodes ();
 		//Debug.Log ();
 
@@ -41,21 +47,25 @@ public class PEtest : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if (pe.Vbest > 0 && iteration < maxIteration) {
+		//if (pe.Vbest > 0 && iteration < maxIteration) {
+		if (iteration < maxIteration) {
 			iteration++;
 			pe.PEOneStep ();
 			//Debug.Log ("V: "+pe.Vbest);
 		} else if(!end) {
+			loading = false;
+
 			end = true;
-			Debug.Log ("V: "+pe.Vbest);
+			Debug.Log ("final V: "+pe.Vbest);
 			pe.Pbest.print();
 			Debug.Log ("FINITO");
 
 			SendPathToRobot(pe.Pbest);
 		}
 		if (iteration%1000 == 0) {
+			iteration++;
 			Debug.Log ("V: "+pe.Vbest);
-			//pe.Pbest.print();
+			pe.Pbest.print();
 
 		}
 	}
@@ -69,7 +79,7 @@ public class PEtest : MonoBehaviour {
 			r2_path.Add( nodeToPos( pos[1] ) );
 		}
 		robotsObject [0].path = r1_path;
-		robotsObject [1].path = r1_path;
+		robotsObject [1].path = r2_path;
 		robotsObject [0].go = true;
 		robotsObject [1].go = true;
 

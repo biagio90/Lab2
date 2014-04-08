@@ -102,15 +102,23 @@ public class Graph {
 
 	
 	public int findInGraph (Vector3 pos) {
+		int ret = -1;
+		float minDist = 1000f;
+		RaycastHit hit = new RaycastHit ();
+
 		for (int i=0; i<nodes.Length; i++) {
 			Vector3 pos2 = nodes[i].area.center3D;
 			Vector3 dir = (pos2 - pos).normalized;
-			
-			if(freePath(pos2, pos+dir*3)) {
-				return i;
+			float sight = (pos2 - pos).magnitude;
+
+			Ray ray = new Ray(pos, dir);
+
+			if(!Physics.Raycast (ray, out hit, sight) && sight < minDist) {
+				minDist = sight;
+				ret = i;
 			}
 		}
-		return -1;
+		return ret;
 	}
 	
 

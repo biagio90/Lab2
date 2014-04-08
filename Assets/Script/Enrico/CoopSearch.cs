@@ -2,6 +2,13 @@
 using System.Collections;
 
 public class CoopSearch : MonoBehaviour {
+
+	private bool loading = true;
+
+	void OnGUI() {
+		if (loading) GUI.Label(new Rect (400, 300, 100, 30), "Calculating...");
+	}
+
 	private Graph graph;
 	private Area[] aree;
 
@@ -85,6 +92,8 @@ public class CoopSearch : MonoBehaviour {
 				countLastSolution = 1;
 			}
 		} else if(!end) {
+			loading = false;
+
 			end = true;
 			Debug.Log ("FINITO");
 			
